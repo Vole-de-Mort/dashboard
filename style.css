@@ -9,7 +9,6 @@
 .container{
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 2fr repeat(7, 1fr);
 }
 .sidebar{
     background-color: #0284c7;
@@ -17,12 +16,10 @@
     grid-row: 1/9;
     font-size: var(--second-s);
     display: flex;
-    height: 100vh;
     flex-direction: column;
     gap: 30px;
     padding-left: 20px;
 }
-
 svg{
     height: 30px;
     width: 30px;
@@ -52,6 +49,7 @@ a{
 }
 .header{
     background-color: #fffbeb80;
+    padding: 20px;
     grid-column: 2/3;
     display: grid;
     grid-template-columns: 4fr 2fr;
@@ -118,16 +116,15 @@ img{
 }
 .main-content{
     background-color: #e5e7eb;
-    grid-column: 2/3;
-    grid-row: 2/9;
     display: grid;
     grid-template-columns: 3fr 1fr;
+    padding: 20px;
 }
 .main-content .left{
 
     display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 50px repeat(3 , 1fr) auto;
+    grid-template-columns: repeat(auto-fit, minmax(19rem,1fr));
+    grid-area: 2 / 1 / 3 / 2;
     gap: 30px;
     padding-left: 20px;
     padding-right: 20px;
@@ -137,17 +134,17 @@ img{
     color: black;
     border-radius: 15px;
     border-left: 15px solid #273b7a;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
 }
-.left > p{
+.main-content > p{
     font-size: var(--second-s);
-    grid-column: 1/3;
+    grid-area: 1 / 1 / 2 / 2;
     align-self: end;
 }
-
 .card > p{
     font-size: var(--therd-s);
 }
@@ -163,23 +160,22 @@ img{
     fill: #6b7280;
 }
 .main-content .rigth{
-
+    grid-area: 2 / 2 / 3 / 3;
     display: grid;
-    grid-template-rows: 40px 1fr 40px 1fr;
-    padding-top: 20px;
-    padding-right: 15px;
-    margin-bottom: 30px;
+    grid-template-rows: 1fr 50px 1fr;
+    gap: 1.8rem;
+}
+.main-content .damn{
+    grid-area: 1/2/1/3;
 }
 .annoncements{
+    background-color: #fffbeb80;
     border-radius: 20px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
-.rigth > :nth-child(1),
-.rigth > :nth-child(3){
-    align-self: end;
+    
 }
 .second-text{
     font-size: var(--second-s);
@@ -187,11 +183,17 @@ img{
 .rigth div{
     background-color: #fafafa;
     border-radius: 20px;
-
 }
 .forth-text{
     color: #71717a;
     font-size: var(--forth-s);
+}
+.trending{
+    background-color: #fffbeb80;
+
+    display: flex;
+    flex-direction: column;
+    height: max-content;
 }
 .user{
     padding: 10px;
